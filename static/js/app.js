@@ -48,11 +48,14 @@ function optionChanged(UID) {
 
 // FUNCTION #4 of 4
 function initDashboard() {
-    var dropdown = d3.select("#selDataset")
+    var dropdown = d3.select("#selDataset");
     d3.json("samples.json").then(data => {
         var names = data.names;
         names.forEach(UID => {
-            dropdown.append("option").text(UID).property("value", UID)
+            dropdown.append("option").text(UID).property("value", UID);
+
+            // Object.entries(id).forEach(([numbr,v])=>{
+            //     select.append('option').text(v);
         })
         buildCharts(names[0]);
         populateDemoInfo(names[0]);
