@@ -2,10 +2,10 @@
 
 d3.json('samples.json').then((data) => {
     var dropdown = data.names;
-    console.log(data.metadata);
-    var select = d3.selectAll('#selDataset');
+   
+    var dropDown = d3.selectAll('#selDataset');
     Object.entries(dropdown).forEach(([numbr, v]) => {
-        select.append('option').text(v);
+        dropDown.append('option').text(v);
     })
 })
 
